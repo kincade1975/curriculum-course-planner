@@ -33,11 +33,11 @@ public class CourseResource {
 	@JsonProperty("studentSize")
 	private Integer studentSize;
 
-	@JsonProperty("preferredDayIndex")
-	private Integer preferredDayIndex;
+	@JsonProperty("preferredDays")
+	private List<Integer> preferredDays;
 
-	@JsonProperty("preferredTimeslotIndex")
-	private Integer preferredTimeslotIndex;
+	@JsonProperty("preferredTimeslots")
+	private List<Integer> preferredTimeslots;
 
 	public Long getId() {
 		return id;
@@ -103,28 +103,25 @@ public class CourseResource {
 		this.studentSize = studentSize;
 	}
 
-	public Integer getPreferredDayIndex() {
-		return preferredDayIndex;
+	public List<Integer> getPreferredDays() {
+		return preferredDays;
 	}
 
-	public void setPreferredDayIndex(Integer preferredDayIndex) {
-		this.preferredDayIndex = preferredDayIndex;
+	public void setPreferredDays(List<Integer> preferredDays) {
+		this.preferredDays = preferredDays;
 	}
 
-	public Integer getPreferredTimeslotIndex() {
-		return preferredTimeslotIndex;
+	public List<Integer> getPreferredTimeslots() {
+		return preferredTimeslots;
 	}
 
-	public void setPreferredTimeslotIndex(Integer preferredTimeslotIndex) {
-		this.preferredTimeslotIndex = preferredTimeslotIndex;
+	public void setPreferredTimeslots(List<Integer> preferredTimeslots) {
+		this.preferredTimeslots = preferredTimeslots;
 	}
 
 	@Override
 	public String toString() {
-		return "CourseResource [id=" + id + ", code=" + code + ", type=" + type + ", teacherCode=" + teacherCode
-				+ ", lectureSize=" + lectureSize + ", minWorkingDaySize=" + minWorkingDaySize + ", curriculumCodes="
-				+ curriculumCodes + ", studentSize=" + studentSize + ", preferredDayIndex=" + preferredDayIndex
-				+ ", preferredTimeslotIndex=" + preferredTimeslotIndex + "]";
+		return "CourseResource [id=" + id + ", code=" + code + ", type=" + type + ", teacherCode=" + teacherCode + ", lectureSize=" + lectureSize + ", minWorkingDaySize=" + minWorkingDaySize + ", curriculumCodes=" + curriculumCodes + ", studentSize=" + studentSize + ", preferredDays=" + preferredDays + ", preferredTimeslots=" + preferredTimeslots + "]";
 	}
 
 }

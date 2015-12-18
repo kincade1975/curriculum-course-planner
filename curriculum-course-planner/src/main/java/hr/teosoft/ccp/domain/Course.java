@@ -29,11 +29,11 @@ public class Course extends AbstractPersistable {
 	/** type (e.g. P - predavanje, V - vjezbe, S - seminar) */
 	private String type;
 
-	/** preferred day index (e.g. 0 - Monday, 1 - Tuesday, etc) */
-	private Integer preferredDayIndex;
+	/** preferred days (e.g. 0 = Monday, 1 = Tuesday, etc) */
+	private List<Integer> preferredDays;
 
-	/** preferred timeslot index (e.g. 0 - 07:15, 1 - 08:00, etc) */
-	private Integer preferredTimeslotIndex;
+	/** preferred timeslots (e.g. 0 - 07:15, 1 - 08:00, etc) */
+	private List<Integer> preferredTimeslots;
 
 	public String getCode() {
 		return code;
@@ -91,20 +91,20 @@ public class Course extends AbstractPersistable {
 		this.type = type;
 	}
 
-	public Integer getPreferredDayIndex() {
-		return preferredDayIndex;
+	public List<Integer> getPreferredDays() {
+		return preferredDays;
 	}
 
-	public void setPreferredDayIndex(Integer preferredDayIndex) {
-		this.preferredDayIndex = preferredDayIndex;
+	public void setPreferredDays(List<Integer> preferredDays) {
+		this.preferredDays = preferredDays;
 	}
 
-	public Integer getPreferredTimeslotIndex() {
-		return preferredTimeslotIndex;
+	public List<Integer> getPreferredTimeslots() {
+		return preferredTimeslots;
 	}
 
-	public void setPreferredTimeslotIndex(Integer preferredTimeslotIndex) {
-		this.preferredTimeslotIndex = preferredTimeslotIndex;
+	public void setPreferredTimeslots(List<Integer> preferredTimeslots) {
+		this.preferredTimeslots = preferredTimeslots;
 	}
 
 	@Override

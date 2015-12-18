@@ -52,7 +52,7 @@ public class PlannerService {
 	public CourseSchedule getSolution() throws IOException {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
-			CourseScheduleResource resource = mapper.readValue(new File("/Users/dblazevic/git/curriculum-course-planner/curriculum-course-planner/src/main/resources/ffos_2015_2.json"), CourseScheduleResource.class);
+			CourseScheduleResource resource = mapper.readValue(new File("/Users/dblazevic/git/curriculum-course-planner/curriculum-course-planner/src/main/resources/ffos_2015_1.json"), CourseScheduleResource.class);
 			CourseSchedule entity = convert(resource);
 			return entity;
 		} catch (Exception e) {
@@ -475,8 +475,8 @@ public class PlannerService {
 		entity.setCurriculumList(getCurriculums(resource.getCurriculumCodes(), curriculums));
 		entity.setStudentSize(resource.getStudentSize());
 		entity.setType(resource.getType());
-		entity.setPreferredDayIndex(resource.getPreferredDayIndex());
-		entity.setPreferredTimeslotIndex(resource.getPreferredTimeslotIndex());
+		entity.setPreferredDays(resource.getPreferredDays());
+		entity.setPreferredTimeslots(resource.getPreferredTimeslots());
 		return entity;
 	}
 
@@ -496,8 +496,8 @@ public class PlannerService {
 		resource.setCurriculumCodes(getCurriculumCodes(entity.getCurriculumList()));
 		resource.setStudentSize(entity.getStudentSize());
 		resource.setType(entity.getType());
-		resource.setPreferredDayIndex(entity.getPreferredDayIndex());
-		resource.setPreferredTimeslotIndex(entity.getPreferredTimeslotIndex());
+		resource.setPreferredDays(entity.getPreferredDays());
+		resource.setPreferredTimeslots(entity.getPreferredTimeslots());
 		return resource;
 	}
 

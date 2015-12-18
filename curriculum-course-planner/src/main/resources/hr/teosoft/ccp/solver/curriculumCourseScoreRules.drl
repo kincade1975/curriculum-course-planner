@@ -138,16 +138,16 @@ rule "roomStability"
         scoreHolder.addSoftConstraintMatch(kcontext, -($roomCount.intValue() - 1));
 end
 
-rule "preferredDay"
+rule "preferredDays"
     when
-        Lecture(course != null, period != null, course.preferredDayIndex != -1, course.preferredDayIndex != period.day.dayIndex)
+        Lecture(course != null, period != null, course.preferredDays != null, course.preferredDays not contains period.day.dayIndex)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -10);
 end
 
-rule "preferredTimeslot"
+rule "preferredTimeslots"
     when
-        Lecture(course != null, period != null, course.preferredTimeslotIndex != -1, course.preferredTimeslotIndex != period.timeslot.timeslotIndex)
+        Lecture(course != null, period != null, course.preferredTimeslots != null, course.preferredTimeslots not contains period.timeslot.timeslotIndex)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, -10);
 end

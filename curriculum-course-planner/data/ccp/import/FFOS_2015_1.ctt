@@ -9,8 +9,8 @@ Constraints: 5
 COURSES:
 course_01                               T01     2   1   50      P   -1  -1
 course_02                               T02     4   2   50      V   -1  -1
-course_03                               T03     2   2   50      P   -1  -1
-course_04                               T04     2   1   50      S   -1  -1
+course_03                               T03     2   1   50      P   -1  -1
+course_04                               T04     2   1   50      S    3  -1
 
 ROOMS:
 R01                                     100     P

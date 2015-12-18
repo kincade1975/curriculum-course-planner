@@ -35,8 +35,8 @@
             "minWorkingDaySize" : 1,
             "curriculumCodes" : ["curriculum_01"],
             "studentSize" : 50,
-            "preferredDayIndex" : -1,
-            "preferredTimeslotIndex" : -1
+            "preferredDays" : null,
+            "preferredTimeslots" : null
         },
         {
             "code" : "course_02",
@@ -46,19 +46,19 @@
             "minWorkingDaySize" : 2,
             "curriculumCodes" : ["curriculum_01"],
             "studentSize" : 50,
-            "preferredDayIndex" : -1,
-            "preferredTimeslotIndex" : -1
+            "preferredDays" : null,
+            "preferredTimeslots" : null
         },
         {
             "code" : "course_03",
             "type" : "P",
             "teacherCode" : "teacher_03",
             "lectureSize" : 2,
-            "minWorkingDaySize" : 2,
+            "minWorkingDaySize" : 1,
             "curriculumCodes" : ["curriculum_02"],
             "studentSize" : 50,
-            "preferredDayIndex" : -1,
-            "preferredTimeslotIndex" : -1
+            "preferredDays" : null,
+            "preferredTimeslots" : null
         },
         {
             "code" : "course_04",
@@ -68,8 +68,8 @@
             "minWorkingDaySize" : 1,
             "curriculumCodes" : ["curriculum_02"],
             "studentSize" : 50,
-            "preferredDayIndex" : -1,
-            "preferredTimeslotIndex" : -1
+            "preferredDays" : [3],
+            "preferredTimeslots" : null
         }
     ],
     

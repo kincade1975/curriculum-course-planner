@@ -50,7 +50,7 @@ public class CurriculumCourseImporter extends AbstractTxtSolutionImporter {
 		@SuppressWarnings("rawtypes")
 		@Override
 		public Solution readSolution() throws IOException {
-			if (Boolean.FALSE) {
+			if (Boolean.TRUE) {
 				return new PlannerService().getSolution();
 			} else {
 				CourseSchedule schedule = new CourseSchedule();
@@ -107,7 +107,7 @@ public class CurriculumCourseImporter extends AbstractTxtSolutionImporter {
 			for (int i = 0; i < courseListSize; i++) {
 				Course course = new Course();
 				course.setId((long) i);
-				// Courses: <CourseID> <Teacher> <# Lectures> <MinWorkingDays> <# Students> <Type> <PreferredDayIndex> <PreferredTimeslotIndex>
+				// Courses: <CourseID> <Teacher> <# Lectures> <MinWorkingDays> <# Students> <Type> <PreferredDays> <PreferredTimeslotIndex>
 				String line = bufferedReader.readLine();
 				String[] lineTokens = splitBySpacesOrTabs(line, 8);
 				course.setCode(lineTokens[0]);
@@ -117,8 +117,25 @@ public class CurriculumCourseImporter extends AbstractTxtSolutionImporter {
 				course.setCurriculumList(new ArrayList<Curriculum>());
 				course.setStudentSize(Integer.parseInt(lineTokens[4]));
 				course.setType(lineTokens[5]);
-				course.setPreferredDayIndex(Integer.parseInt(lineTokens[6]));
-				course.setPreferredTimeslotIndex(Integer.parseInt(lineTokens[7]));
+
+				if (!lineTokens[6].equalsIgnoreCase("-1")) {
+					List<Integer> preferredDays = new ArrayList<>();
+					String[] array = lineTokens[6].split("\\|");
+					for (String str : array) {
+						preferredDays.add(Integer.parseInt(str));
+					}
+					course.setPreferredDays(preferredDays);
+				}
+
+				if (!lineTokens[7].equalsIgnoreCase("-1")) {
+					List<Integer> preferredTimeslots = new ArrayList<>();
+					String[] array = lineTokens[7].split("\\|");
+					for (String str : array) {
+						preferredTimeslots.add(Integer.parseInt(str));
+					}
+					course.setPreferredTimeslots(preferredTimeslots);
+				}
+
 				courseList.add(course);
 				courseMap.put(course.getCode(), course);
 			}

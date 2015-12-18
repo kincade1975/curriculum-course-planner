@@ -1,37 +1,37 @@
 {
-  "id": 7033441,
+  "id": 3877439,
   "name": "FFOS_2015_1",
   "teachers": [
     {
-      "id": 4246869,
+      "id": 4329873,
       "code": "teacher_01"
     },
     {
-      "id": 5731447,
+      "id": 2875855,
       "code": "teacher_02"
     },
     {
-      "id": 3411005,
+      "id": 2337582,
       "code": "teacher_03"
     },
     {
-      "id": 9628736,
+      "id": 7901267,
       "code": "teacher_04"
     }
   ],
   "curriculums": [
     {
-      "id": 3168652,
+      "id": 6025782,
       "code": "curriculum_01"
     },
     {
-      "id": 3100631,
+      "id": 8760486,
       "code": "curriculum_02"
     }
   ],
   "courses": [
     {
-      "id": 3937591,
+      "id": 8948790,
       "code": "course_01",
       "type": "P",
       "teacherCode": "teacher_01",
@@ -40,12 +40,10 @@
       "curriculumCodes": [
         "curriculum_01"
       ],
-      "studentSize": 50,
-      "preferredDayIndex": -1,
-      "preferredTimeslotIndex": -1
+      "studentSize": 50
     },
     {
-      "id": 2756815,
+      "id": 2751138,
       "code": "course_02",
       "type": "V",
       "teacherCode": "teacher_02",
@@ -54,26 +52,22 @@
       "curriculumCodes": [
         "curriculum_01"
       ],
-      "studentSize": 50,
-      "preferredDayIndex": -1,
-      "preferredTimeslotIndex": -1
+      "studentSize": 50
     },
     {
-      "id": 2644864,
+      "id": 5497761,
       "code": "course_03",
-      "type": "S",
+      "type": "P",
       "teacherCode": "teacher_03",
       "lectureSize": 2,
       "minWorkingDaySize": 2,
       "curriculumCodes": [
         "curriculum_02"
       ],
-      "studentSize": 50,
-      "preferredDayIndex": -1,
-      "preferredTimeslotIndex": -1
+      "studentSize": 50
     },
     {
-      "id": 9712124,
+      "id": 6340800,
       "code": "course_04",
       "type": "S",
       "teacherCode": "teacher_04",
@@ -83,223 +77,224 @@
         "curriculum_02"
       ],
       "studentSize": 50,
-      "preferredDayIndex": -1,
-      "preferredTimeslotIndex": -1
+      "preferredDays": [
+        3
+      ]
     }
   ],
   "days": [
     {
-      "id": 7959195,
+      "id": 7487209,
       "dayIndex": 0
     },
     {
-      "id": 7799145,
+      "id": 3933768,
       "dayIndex": 1
     },
     {
-      "id": 2422680,
+      "id": 8499102,
       "dayIndex": 2
     },
     {
-      "id": 1763920,
+      "id": 2136938,
       "dayIndex": 3
     },
     {
-      "id": 5300133,
+      "id": 9846493,
       "dayIndex": 4
     },
     {
-      "id": 9087642,
+      "id": 2893076,
       "dayIndex": 5
     }
   ],
   "timeslots": [
     {
-      "id": 6107487,
+      "id": 4930307,
       "timeslotIndex": 0
     },
     {
-      "id": 9660702,
+      "id": 1079321,
       "timeslotIndex": 1
     },
     {
-      "id": 4288722,
+      "id": 7904304,
       "timeslotIndex": 2
     },
     {
-      "id": 5458475,
+      "id": 9507007,
       "timeslotIndex": 3
     },
     {
-      "id": 1533988,
+      "id": 9917290,
       "timeslotIndex": 4
     },
     {
-      "id": 2056727,
+      "id": 7964510,
       "timeslotIndex": 5
     }
   ],
   "periods": [
     {
-      "id": 3878241,
+      "id": 3391289,
       "code": "0-0"
     },
     {
-      "id": 9161197,
+      "id": 7092797,
       "code": "0-1"
     },
     {
-      "id": 8605718,
+      "id": 2066374,
       "code": "0-2"
     },
     {
-      "id": 4921778,
+      "id": 4808555,
       "code": "0-3"
     },
     {
-      "id": 6388672,
+      "id": 3984981,
       "code": "0-4"
     },
     {
-      "id": 2942284,
+      "id": 9230533,
       "code": "0-5"
     },
     {
-      "id": 9370936,
+      "id": 2369034,
       "code": "1-0"
     },
     {
-      "id": 4391716,
+      "id": 6318996,
       "code": "1-1"
     },
     {
-      "id": 3029758,
+      "id": 6602981,
       "code": "1-2"
     },
     {
-      "id": 8739428,
+      "id": 3392781,
       "code": "1-3"
     },
     {
-      "id": 2680311,
+      "id": 6538230,
       "code": "1-4"
     },
     {
-      "id": 5562194,
+      "id": 3774648,
       "code": "1-5"
     },
     {
-      "id": 6996293,
+      "id": 5706648,
       "code": "2-0"
     },
     {
-      "id": 7431553,
+      "id": 1678463,
       "code": "2-1"
     },
     {
-      "id": 5599068,
+      "id": 7627552,
       "code": "2-2"
     },
     {
-      "id": 4825850,
+      "id": 7991589,
       "code": "2-3"
     },
     {
-      "id": 4672619,
+      "id": 9399700,
       "code": "2-4"
     },
     {
-      "id": 3757326,
+      "id": 3057127,
       "code": "2-5"
     },
     {
-      "id": 7694427,
+      "id": 1631958,
       "code": "3-0"
     },
     {
-      "id": 1222475,
+      "id": 7259586,
       "code": "3-1"
     },
     {
-      "id": 9135537,
+      "id": 3027850,
       "code": "3-2"
     },
     {
-      "id": 1403722,
+      "id": 7321644,
       "code": "3-3"
     },
     {
-      "id": 1386421,
+      "id": 2041408,
       "code": "3-4"
     },
     {
-      "id": 5974012,
+      "id": 3682999,
       "code": "3-5"
     },
     {
-      "id": 4019967,
+      "id": 8885276,
       "code": "4-0"
     },
     {
-      "id": 7150355,
+      "id": 4649986,
       "code": "4-1"
     },
     {
-      "id": 4165650,
+      "id": 6995189,
       "code": "4-2"
     },
     {
-      "id": 2756330,
+      "id": 9351570,
       "code": "4-3"
     },
     {
-      "id": 9194436,
+      "id": 7474173,
       "code": "4-4"
     },
     {
-      "id": 2686939,
+      "id": 2048998,
       "code": "4-5"
     },
     {
-      "id": 3676536,
+      "id": 7695063,
       "code": "5-0"
     },
     {
-      "id": 1369735,
+      "id": 5416652,
       "code": "5-1"
     },
     {
-      "id": 6647040,
+      "id": 1031040,
       "code": "5-2"
     },
     {
-      "id": 7176637,
+      "id": 6024371,
       "code": "5-3"
     },
     {
-      "id": 1396476,
+      "id": 9789363,
       "code": "5-4"
     },
     {
-      "id": 7751022,
+      "id": 4780646,
       "code": "5-5"
     }
   ],
   "rooms": [
     {
-      "id": 7100155,
+      "id": 2281260,
       "code": "room_01",
       "type": "P",
       "capacity": 100
     },
     {
-      "id": 4431877,
+      "id": 8493714,
       "code": "room_02",
       "type": "V",
       "capacity": 50
     },
     {
-      "id": 8123024,
+      "id": 5902917,
       "code": "room_03",
       "type": "S",
       "capacity": 50
@@ -307,34 +302,34 @@
   ],
   "unavailablePeriodPenalties": [
     {
-      "id": 1640451,
+      "id": 9685795,
       "courseCode": "course_01",
       "periodCode": "0-0"
     },
     {
-      "id": 4770014,
+      "id": 5546017,
       "courseCode": "course_01",
       "periodCode": "1-0"
     },
     {
-      "id": 3494551,
+      "id": 9384762,
       "courseCode": "course_01",
       "periodCode": "2-0"
     },
     {
-      "id": 1888326,
+      "id": 4434919,
       "courseCode": "course_01",
       "periodCode": "3-0"
     },
     {
-      "id": 5957519,
+      "id": 9075749,
       "courseCode": "course_01",
       "periodCode": "4-0"
     }
   ],
   "lectures": [
     {
-      "id": 8992026,
+      "id": 6853668,
       "courseCode": "course_01",
       "lectureIndexInCourse": 0,
       "locked": false,
@@ -342,75 +337,75 @@
       "roomCode": "room_01"
     },
     {
-      "id": 2971685,
+      "id": 6460242,
       "courseCode": "course_01",
       "lectureIndexInCourse": 1,
       "locked": false,
-      "periodCode": "0-2",
+      "periodCode": "0-4",
       "roomCode": "room_01"
     },
     {
-      "id": 5405876,
+      "id": 9554999,
       "courseCode": "course_02",
       "lectureIndexInCourse": 0,
-      "locked": false,
-      "periodCode": "1-0",
-      "roomCode": "room_02"
-    },
-    {
-      "id": 5894785,
-      "courseCode": "course_02",
-      "lectureIndexInCourse": 1,
       "locked": false,
       "periodCode": "0-0",
       "roomCode": "room_02"
     },
     {
-      "id": 4293777,
+      "id": 2654643,
       "courseCode": "course_02",
-      "lectureIndexInCourse": 2,
+      "lectureIndexInCourse": 1,
       "locked": false,
       "periodCode": "1-1",
       "roomCode": "room_02"
     },
     {
-      "id": 1932209,
+      "id": 1807016,
       "courseCode": "course_02",
-      "lectureIndexInCourse": 3,
+      "lectureIndexInCourse": 2,
       "locked": false,
       "periodCode": "0-3",
       "roomCode": "room_02"
     },
     {
-      "id": 7797840,
-      "courseCode": "course_03",
-      "lectureIndexInCourse": 0,
-      "locked": false,
-      "periodCode": "0-0",
-      "roomCode": "room_03"
-    },
-    {
-      "id": 2145927,
-      "courseCode": "course_03",
-      "lectureIndexInCourse": 1,
+      "id": 7243581,
+      "courseCode": "course_02",
+      "lectureIndexInCourse": 3,
       "locked": false,
       "periodCode": "1-0",
-      "roomCode": "room_03"
+      "roomCode": "room_02"
     },
     {
-      "id": 2818884,
+      "id": 4123915,
+      "courseCode": "course_03",
+      "lectureIndexInCourse": 0,
+      "locked": false,
+      "periodCode": "1-4",
+      "roomCode": "room_01"
+    },
+    {
+      "id": 1443057,
+      "courseCode": "course_03",
+      "lectureIndexInCourse": 1,
+      "locked": false,
+      "periodCode": "3-2",
+      "roomCode": "room_01"
+    },
+    {
+      "id": 6572349,
       "courseCode": "course_04",
       "lectureIndexInCourse": 0,
       "locked": false,
-      "periodCode": "1-1",
+      "periodCode": "3-0",
       "roomCode": "room_03"
     },
     {
-      "id": 6203584,
+      "id": 2940762,
       "courseCode": "course_04",
       "lectureIndexInCourse": 1,
       "locked": false,
-      "periodCode": "0-1",
+      "periodCode": "3-1",
       "roomCode": "room_03"
     }
   ]
