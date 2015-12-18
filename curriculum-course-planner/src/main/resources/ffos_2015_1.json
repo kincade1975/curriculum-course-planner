@@ -11,6 +11,9 @@
         },
         {
             "code" : "teacher_03"
+        },
+        {
+            "code" : "teacher_04"
         }
     ],
     
@@ -52,7 +55,18 @@
             "teacherCode" : "teacher_03",
             "lectureSize" : 2,
             "minWorkingDaySize" : 2,
-            "curriculumCodes" : ["curriculum_01"],
+            "curriculumCodes" : ["curriculum_02"],
+            "studentSize" : 50,
+            "preferredDayIndex" : -1,
+            "preferredTimeslotIndex" : -1
+        },
+        {
+            "code" : "course_04",
+            "type" : "S",
+            "teacherCode" : "teacher_04",
+            "lectureSize" : 2,
+            "minWorkingDaySize" : 1,
+            "curriculumCodes" : ["curriculum_02"],
             "studentSize" : 50,
             "preferredDayIndex" : -1,
             "preferredTimeslotIndex" : -1

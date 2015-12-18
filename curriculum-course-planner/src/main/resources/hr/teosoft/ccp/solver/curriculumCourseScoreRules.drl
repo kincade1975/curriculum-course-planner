@@ -18,7 +18,7 @@ import hr.teosoft.ccp.domain.solver.CourseConflict;
 global HardSoftScoreHolder scoreHolder;
 
 // ############################################################################
-// Hard constraints
+//  HARD CONSTRAINTS
 // ############################################################################
 
 // Lectures: A missing or extra lecture of a course.
@@ -72,7 +72,7 @@ rule "roomType"
 end
 
 // ############################################################################
-// Soft constraints
+//  SOFT CONSTRAINTS
 // ############################################################################
 
 // RoomCapacity: For each lecture, the number of students that attend the course should be less or equal

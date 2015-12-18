@@ -83,7 +83,7 @@ public class PlannerService {
 	 */
 	private CourseSchedule convert(CourseScheduleResource courseScheduleResource) throws Exception {
 		CourseSchedule courseSchedule = new CourseSchedule();
-		courseSchedule.setId((courseScheduleResource.getId() != null) ? courseScheduleResource.getId() : 0L);
+		courseSchedule.setId((courseScheduleResource.getId() != null) ? courseScheduleResource.getId() : generateId());
 		courseSchedule.setName(courseScheduleResource.getName());
 
 		// teachers
