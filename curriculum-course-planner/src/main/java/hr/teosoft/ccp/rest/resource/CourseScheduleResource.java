@@ -42,6 +42,9 @@ public class CourseScheduleResource {
 	@JsonProperty("lectures")
 	private List<LectureResource> lectures;
 
+	@JsonProperty("score")
+	private ScoreResource score;
+
 	public Long getId() {
 		return id;
 	}
@@ -130,12 +133,17 @@ public class CourseScheduleResource {
 		this.lectures = lectures;
 	}
 
+	public ScoreResource getScore() {
+		return score;
+	}
+
+	public void setScore(ScoreResource score) {
+		this.score = score;
+	}
+
 	@Override
 	public String toString() {
-		return "CourseScheduleResource [id=" + id + ", name=" + name + ", teachers=" + teachers + ", curriculums="
-				+ curriculums + ", courses=" + courses + ", days=" + days + ", timeslots=" + timeslots + ", periods="
-				+ periods + ", rooms=" + rooms + ", unavailablePeriodPenalties=" + unavailablePeriodPenalties
-				+ ", lectures=" + lectures + "]";
+		return "CourseScheduleResource [id=" + id + ", name=" + name + ", teachers=" + teachers + ", curriculums=" + curriculums + ", courses=" + courses + ", days=" + days + ", timeslots=" + timeslots + ", periods=" + periods + ", rooms=" + rooms + ", unavailablePeriodPenalties=" + unavailablePeriodPenalties + ", lectures=" + lectures + ", score=" + score + "]";
 	}
 
 }

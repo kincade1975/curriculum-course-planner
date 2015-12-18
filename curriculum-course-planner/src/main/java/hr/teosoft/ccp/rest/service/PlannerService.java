@@ -6,8 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.optaplanner.core.api.score.constraint.ConstraintMatch;
+import org.optaplanner.core.api.score.constraint.ConstraintMatchTotal;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
+import org.optaplanner.core.impl.score.director.ScoreDirector;
+import org.optaplanner.core.impl.score.director.ScoreDirectorFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -32,9 +36,11 @@ import hr.teosoft.ccp.rest.resource.DayResource;
 import hr.teosoft.ccp.rest.resource.LectureResource;
 import hr.teosoft.ccp.rest.resource.PeriodResource;
 import hr.teosoft.ccp.rest.resource.RoomResource;
+import hr.teosoft.ccp.rest.resource.ScoreResource;
 import hr.teosoft.ccp.rest.resource.TeacherResource;
 import hr.teosoft.ccp.rest.resource.TimeslotResource;
 import hr.teosoft.ccp.rest.resource.UnavailablePeriodPenaltyResource;
+import hr.teosoft.ccp.rest.resource.UnsatisfiedConstraint;
 
 @Service
 public class PlannerService {
@@ -42,10 +48,13 @@ public class PlannerService {
 	static final Logger LOGGER = LoggerFactory.getLogger(PlannerService.class);
 
 	private Solver solver;
+	private ScoreDirector scoreDirector;
 
 	public PlannerService() {
 		if (solver == null) {
 			solver = SolverFactory.createFromXmlResource(SwingApp.SOLVER_CONFIG).buildSolver();
+			ScoreDirectorFactory scoreDirectorFactory = solver.getScoreDirectorFactory();
+			scoreDirector = scoreDirectorFactory.buildScoreDirector();
 		}
 	}
 
@@ -259,6 +268,25 @@ public class PlannerService {
 			lectures.add(convert(entity));
 		}
 		courseScheduleResource.setLectures(lectures);
+
+		// score
+		ScoreResource score = new ScoreResource();
+		scoreDirector.setWorkingSolution(bestSolution);
+		score.setScore(scoreDirector.calculateScore().toString());
+
+		for (ConstraintMatchTotal constraintMatchTotal : scoreDirector.getConstraintMatchTotals()) {
+			UnsatisfiedConstraint unsatisfiedConstraint = new UnsatisfiedConstraint();
+			unsatisfiedConstraint.setConstraintName(constraintMatchTotal.getConstraintName());
+			unsatisfiedConstraint.setWeightTotal(constraintMatchTotal.getWeightTotalAsNumber());
+
+			score.getUnsatisfiedConstraints().add(unsatisfiedConstraint);
+
+			for (ConstraintMatch constraintMatch : constraintMatchTotal.getConstraintMatchSet()) {
+				unsatisfiedConstraint.setDetails(constraintMatch.toString());
+			}
+		}
+
+		courseScheduleResource.setScore(score);
 
 		return courseScheduleResource;
 	}
