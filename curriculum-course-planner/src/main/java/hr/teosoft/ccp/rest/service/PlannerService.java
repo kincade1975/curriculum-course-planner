@@ -52,7 +52,7 @@ public class PlannerService {
 	public CourseSchedule getSolution() throws IOException {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
-			CourseScheduleResource resource = mapper.readValue(new File("/Users/dblazevic/Documents/workspace-sts-3.7.1.RELEASE/curriculum-course-planner/src/main/resources/ffos_2015_2.json"), CourseScheduleResource.class);
+			CourseScheduleResource resource = mapper.readValue(new File("/Users/dblazevic/git/curriculum-course-planner/curriculum-course-planner/src/main/resources/ffos_2015_2.json"), CourseScheduleResource.class);
 			CourseSchedule entity = convert(resource);
 			return entity;
 		} catch (Exception e) {
