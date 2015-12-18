@@ -1,0 +1,130 @@
+Name: FFOS_2015_1
+Courses: 18
+Rooms: 3
+Days: 5
+Periods_per_day: 6
+Curricula: 2
+Constraints: 90
+
+COURSES:
+ojk_p                                   T01     2   1   50      P   -1  -1
+ojk_v1                                  T01     2   1   50      V   -1  -1
+ojk_v2                                  T02     2   1   50      V   -1  -1
+ssj_p                                   T03     2   1   50      P   -1  -1
+ssj_v1                                  T04     2   1   50      V   -1  -1
+ssj_v2                                  T05     2   1   50      V   -1  -1
+shk_p                                   T06     2   1   50      P   -1  -1
+shk_s                                   T07     4   2   50      S   -1  -1
+sje_v                                   T08     2   1   25      V   -1  -1
+sjnj_v                                  T09     2   1   25      V   -1  -1
+uupz_p                                  T10     2   1   30      P   -1  -1
+uup_p                                   T11     1   1   30      P    0   3
+puhz_p                                  T12     1   1   30      P   -1  -1
+puhz_s                                  T12     3   2   30      S   -1  -1
+psi_p                                   T13     1   1   30      P   -1  -1
+psi_s                                   T13     3   2   30      S   -1  -1
+phursv_p                                T14     2   1   30      P   -1  -1
+phursv_s                                T14     1   1   30      S   -1  -1
+
+ROOMS:
+R01                                     50      S
+R02                                     50      V
+R03                                     100     P     
+
+CURRICULA:
+HRVATSKI_JEZIK_I_KNJIZEVNOST    10      ojk_p ojk_v1 ojk_v2 ssj_p ssj_v1 ssj_v2 shk_p shk_s sje_v sjnj_v
+POVIJEST                         8      uupz_p uup_p puhz_p puhz_s psi_p psi_s phursv_p phursv_s
+
+UNAVAILABILITY_CONSTRAINTS:
+ojk_p                                   0   0
+ojk_p                                   1   0
+ojk_p                                   2   0
+ojk_p                                   3   0
+ojk_p                                   4   0
+ojk_v1                                  0   0
+ojk_v1                                  1   0
+ojk_v1                                  2   0
+ojk_v1                                  3   0
+ojk_v1                                  4   0
+ojk_v2                                  0   0
+ojk_v2                                  1   0
+ojk_v2                                  2   0
+ojk_v2                                  3   0
+ojk_v2                                  4   0
+ssj_p                                   0   0
+ssj_p                                   1   0
+ssj_p                                   2   0
+ssj_p                                   3   0
+ssj_p                                   4   0
+ssj_v1                                  0   0
+ssj_v1                                  1   0
+ssj_v1                                  2   0
+ssj_v1                                  3   0
+ssj_v1                                  4   0
+ssj_v2                                  0   0
+ssj_v2                                  1   0
+ssj_v2                                  2   0
+ssj_v2                                  3   0
+ssj_v2                                  4   0
+sje_v                                   0   0
+sje_v                                   1   0
+sje_v                                   2   0
+sje_v                                   3   0
+sje_v                                   4   0
+sjnj_v                                  0   0
+sjnj_v                                  1   0
+sjnj_v                                  2   0
+sjnj_v                                  3   0
+sjnj_v                                  4   0
+shk_p                                   0   0
+shk_p                                   1   0
+shk_p                                   2   0
+shk_p                                   3   0
+shk_p                                   4   0
+shk_s                                   0   0
+shk_s                                   1   0
+shk_s                                   2   0
+shk_s                                   3   0
+shk_s                                   4   0
+uupz_p                                  0   0
+uupz_p                                  1   0
+uupz_p                                  2   0
+uupz_p                                  3   0
+uupz_p                                  4   0
+uup_p                                   0   0
+uup_p                                   1   0
+uup_p                                   2   0
+uup_p                                   3   0
+uup_p                                   4   0
+puhz_p                                  0   0
+puhz_p                                  1   0
+puhz_p                                  2   0
+puhz_p                                  3   0
+puhz_p                                  4   0
+puhz_s                                  0   0
+puhz_s                                  1   0
+puhz_s                                  2   0
+puhz_s                                  3   0
+puhz_s                                  4   0
+psi_p                                   0   0
+psi_p                                   1   0
+psi_p                                   2   0
+psi_p                                   3   0
+psi_p                                   4   0
+psi_s                                   0   0
+psi_s                                   1   0
+psi_s                                   2   0
+psi_s                                   3   0
+psi_s                                   4   0
+phursv_p                                0   0
+phursv_p                                1   0
+phursv_p                                2   0
+phursv_p                                3   0
+phursv_p                                4   0
+phursv_s                                0   0
+phursv_s                                1   0
+phursv_s                                2   0
+phursv_s                                3   0
+phursv_s                                4   0
+
+END.
