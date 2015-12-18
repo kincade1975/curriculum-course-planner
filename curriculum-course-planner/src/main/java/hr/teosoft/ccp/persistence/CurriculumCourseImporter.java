@@ -50,7 +50,7 @@ public class CurriculumCourseImporter extends AbstractTxtSolutionImporter {
 		@SuppressWarnings("rawtypes")
 		@Override
 		public Solution readSolution() throws IOException {
-			if (Boolean.TRUE) {
+			if (Boolean.FALSE) {
 				return new PlannerService().getSolution();
 			} else {
 				CourseSchedule schedule = new CourseSchedule();

@@ -51,7 +51,7 @@
         },
         {
             "code" : "course_03",
-            "type" : "S",
+            "type" : "P",
             "teacherCode" : "teacher_03",
             "lectureSize" : 2,
             "minWorkingDaySize" : 2,
