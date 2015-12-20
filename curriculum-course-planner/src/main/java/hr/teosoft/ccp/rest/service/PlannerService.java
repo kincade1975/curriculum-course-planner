@@ -10,8 +10,8 @@ import org.optaplanner.core.api.score.constraint.ConstraintMatch;
 import org.optaplanner.core.api.score.constraint.ConstraintMatchTotal;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
+import org.optaplanner.core.config.solver.termination.TerminationConfig;
 import org.optaplanner.core.impl.score.director.ScoreDirector;
-import org.optaplanner.core.impl.score.director.ScoreDirectorFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -40,48 +40,83 @@ import hr.teosoft.ccp.rest.resource.ScoreResource;
 import hr.teosoft.ccp.rest.resource.TeacherResource;
 import hr.teosoft.ccp.rest.resource.TimeslotResource;
 import hr.teosoft.ccp.rest.resource.UnavailablePeriodPenaltyResource;
-import hr.teosoft.ccp.rest.resource.UnsatisfiedConstraint;
+import hr.teosoft.ccp.rest.resource.UnsatisfiedConstraintResource;
 
 @Service
 public class PlannerService {
 
 	static final Logger LOGGER = LoggerFactory.getLogger(PlannerService.class);
 
+	private SolverFactory solverFactory;
 	private Solver solver;
 	private ScoreDirector scoreDirector;
 
-	public PlannerService() {
-		if (solver == null) {
-			solver = SolverFactory.createFromXmlResource(SwingApp.SOLVER_CONFIG).buildSolver();
-			ScoreDirectorFactory scoreDirectorFactory = solver.getScoreDirectorFactory();
-			scoreDirector = scoreDirectorFactory.buildScoreDirector();
+	/**
+	 * Method initializes all components of the planner.
+	 * @param secondsSpentLimit
+	 * @throws Exception
+	 */
+	private void init(Long secondsSpentLimit) throws Exception {
+		solverFactory = SolverFactory.createFromXmlResource(SwingApp.SOLVER_CONFIG);
+
+		if (secondsSpentLimit != null) {
+			TerminationConfig terminationConfig = new TerminationConfig();
+			terminationConfig.setSecondsSpentLimit(secondsSpentLimit);
+			solverFactory.getSolverConfig().setTerminationConfig(terminationConfig);
 		}
+
+		solver = solverFactory.buildSolver();
+		scoreDirector = solver.getScoreDirectorFactory().buildScoreDirector();
+	}
+
+	/**
+	 * Method shuts down all components of the planner.
+	 * @throws Exception
+	 */
+	private void shutdown() throws Exception {
+		scoreDirector.dispose();
+		scoreDirector = null;
+		solver = null;
+		solverFactory = null;
 	}
 
 	public CourseSchedule getSolution() throws IOException {
 		try {
+			init(null);
 			ObjectMapper mapper = new ObjectMapper();
 			CourseScheduleResource resource = mapper.readValue(new File("/Users/dblazevic/git/curriculum-course-planner/curriculum-course-planner/src/main/resources/ffos_2015_1.json"), CourseScheduleResource.class);
 			CourseSchedule entity = convert(resource);
 			return entity;
 		} catch (Exception e) {
 			throw new IOException(e.getMessage(), e);
+		} finally {
+			try {
+				shutdown();
+			} catch (Exception e) {
+				throw new IOException(e.getMessage(), e);
+			}
 		}
 	}
 
 	public CourseScheduleResource solve(CourseScheduleResource courseScheduleResource) throws Exception {
-		CourseSchedule bestSolution = null;
-		// convert to planning solution entity
-		CourseSchedule courseSchedule = convert(courseScheduleResource);
+		try {
+			// initialize solver and score director
+			init((courseScheduleResource.getSecondsSpentLimit() != null) ? courseScheduleResource.getSecondsSpentLimit() : null);
 
-		// solver planning problem
-		solver.solve(courseSchedule);
+			// convert to planning solution entity
+			CourseSchedule courseSchedule = convert(courseScheduleResource);
 
-		// get best solution
-		bestSolution = (CourseSchedule) solver.getBestSolution();
+			// solver planning problem
+			solver.solve(courseSchedule);
 
-		// convert and return best solution
-		return convert(bestSolution);
+			// get best solution
+			CourseSchedule bestSolution = (CourseSchedule) solver.getBestSolution();
+
+			// convert and return best solution
+			return convert(bestSolution);
+		} finally {
+			shutdown();
+		}
 	}
 
 	/**
@@ -205,6 +240,7 @@ public class PlannerService {
 		CourseScheduleResource courseScheduleResource = new CourseScheduleResource();
 		courseScheduleResource.setId(bestSolution.getId());
 		courseScheduleResource.setName(bestSolution.getName());
+		courseScheduleResource.setSecondsSpentLimit(solverFactory.getSolverConfig().getTerminationConfig().getSecondsSpentLimit());
 
 		// teachers
 		List<TeacherResource> teachers = new ArrayList<TeacherResource>();
@@ -275,7 +311,7 @@ public class PlannerService {
 		score.setScore(scoreDirector.calculateScore().toString());
 
 		for (ConstraintMatchTotal constraintMatchTotal : scoreDirector.getConstraintMatchTotals()) {
-			UnsatisfiedConstraint unsatisfiedConstraint = new UnsatisfiedConstraint();
+			UnsatisfiedConstraintResource unsatisfiedConstraint = new UnsatisfiedConstraintResource();
 			unsatisfiedConstraint.setConstraintName(constraintMatchTotal.getConstraintName());
 			unsatisfiedConstraint.setWeightTotal(constraintMatchTotal.getWeightTotalAsNumber());
 
