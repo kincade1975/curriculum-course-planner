@@ -64,7 +64,8 @@ rule "unavailablePeriodPenalty"
         scoreHolder.addHardConstraintMatch(kcontext, -10);
 end
 
-rule "roomType"
+// RequiredRoomType: Course must take place in the room of the required type.
+rule "requiredRoomType"
   when
     Lecture(course != null, room != null, room.type != course.requiredRoomType)
   then
@@ -138,6 +139,7 @@ rule "roomStability"
         scoreHolder.addSoftConstraintMatch(kcontext, -($roomCount.intValue() - 1));
 end
 
+// PreferredDays: If set for course, lecture should take place on the preferred day(s).
 rule "preferredDays"
     when
         Lecture(course != null, period != null, course.preferredDays != null, course.preferredDays not contains period.day.dayIndex)
@@ -145,6 +147,7 @@ rule "preferredDays"
         scoreHolder.addSoftConstraintMatch(kcontext, -10);
 end
 
+// PreferredTimeslots: If set for course, lecture should take place in the preferred timeslot(s).
 rule "preferredTimeslots"
     when
         Lecture(course != null, period != null, course.preferredTimeslots != null, course.preferredTimeslots not contains period.timeslot.timeslotIndex)
