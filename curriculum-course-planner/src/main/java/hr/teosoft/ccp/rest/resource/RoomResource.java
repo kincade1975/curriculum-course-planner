@@ -20,7 +20,7 @@ public class RoomResource {
 	private String code;
 
 	@JsonProperty("type")
-	@ApiObjectField(name="type", required=true, description="Course type. Possible values: P, V, S.")
+	@ApiObjectField(name="type", required=true, description="Course type. Arbitrary value can be set (e.g. L - lecture room, C - computer room, etc).")
 	private String type;
 
 	@JsonProperty("capacity")

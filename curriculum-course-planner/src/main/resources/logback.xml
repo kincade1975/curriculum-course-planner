@@ -35,6 +35,6 @@
     </root>
     
     <!-- LOG LEVEL FOR SPECIFIC PACKAGE(S) -->
-    <logger name="org.optaplanner" level="debug"/>
+    <logger name="org.optaplanner" level="DEBUG"/>
     
 </configuration>

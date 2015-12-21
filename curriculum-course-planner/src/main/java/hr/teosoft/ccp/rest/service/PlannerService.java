@@ -538,7 +538,7 @@ public class PlannerService {
 		entity.setMinWorkingDaySize(resource.getMinWorkingDaySize());
 		entity.setCurriculumList(getCurriculums(resource.getCurriculumCodes(), curriculums));
 		entity.setStudentSize(resource.getStudentSize());
-		entity.setType(resource.getType());
+		entity.setRequiredRoomType(resource.getRequiredRoomType());
 		entity.setPreferredDays(resource.getPreferredDays());
 		entity.setPreferredTimeslots(resource.getPreferredTimeslots());
 		return entity;
@@ -559,7 +559,7 @@ public class PlannerService {
 		resource.setMinWorkingDaySize(entity.getMinWorkingDaySize());
 		resource.setCurriculumCodes(getCurriculumCodes(entity.getCurriculumList()));
 		resource.setStudentSize(entity.getStudentSize());
-		resource.setType(entity.getType());
+		resource.setRequiredRoomType(entity.getRequiredRoomType());
 		resource.setPreferredDays(entity.getPreferredDays());
 		resource.setPreferredTimeslots(entity.getPreferredTimeslots());
 		return resource;

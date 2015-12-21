@@ -26,8 +26,8 @@ public class Course extends AbstractPersistable {
 	private List<Curriculum> curriculumList;
 	private int studentSize;
 
-	/** type (e.g. P - predavanje, V - vjezbe, S - seminar) */
-	private String type;
+	/** required room type (e.g. P - predavanje, V - vjezbe, S - seminar) */
+	private String requiredRoomType;
 
 	/** preferred days (e.g. 0 = Monday, 1 = Tuesday, etc) */
 	private List<Integer> preferredDays;
@@ -83,12 +83,12 @@ public class Course extends AbstractPersistable {
 		this.studentSize = studentSize;
 	}
 
-	public String getType() {
-		return type;
+	public String getRequiredRoomType() {
+		return requiredRoomType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setRequiredRoomType(String requiredRoomType) {
+		this.requiredRoomType = requiredRoomType;
 	}
 
 	public List<Integer> getPreferredDays() {

@@ -116,7 +116,7 @@ public class CurriculumCourseImporter extends AbstractTxtSolutionImporter {
 				course.setMinWorkingDaySize(Integer.parseInt(lineTokens[3]));
 				course.setCurriculumList(new ArrayList<Curriculum>());
 				course.setStudentSize(Integer.parseInt(lineTokens[4]));
-				course.setType(lineTokens[5]);
+				course.setRequiredRoomType(lineTokens[5]);
 
 				if (!lineTokens[6].equalsIgnoreCase("-1")) {
 					List<Integer> preferredDays = new ArrayList<>();

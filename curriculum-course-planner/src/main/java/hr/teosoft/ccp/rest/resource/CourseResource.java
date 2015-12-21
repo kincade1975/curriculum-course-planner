@@ -21,9 +21,9 @@ public class CourseResource {
 	@ApiObjectField(name="code", required=true, description="Course code.")
 	private String code;
 
-	@JsonProperty("type")
-	@ApiObjectField(name="type", required=true, description="Course type.<br>Possible values: P, V, S.")
-	private String type;
+	@JsonProperty("requiredRoomType")
+	@ApiObjectField(name="requiredRoomType", required=true, description="Required room type. This value must match room type (e.g. L - lecture room, C - computer room, etc).")
+	private String requiredRoomType;
 
 	@JsonProperty("teacherCode")
 	@ApiObjectField(name="teacherCode", required=true, description="Teacher code.")
@@ -69,12 +69,12 @@ public class CourseResource {
 		this.code = code;
 	}
 
-	public String getType() {
-		return type;
+	public String getRequiredRoomType() {
+		return requiredRoomType;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setRequiredRoomType(String requiredRoomType) {
+		this.requiredRoomType = requiredRoomType;
 	}
 
 	public String getTeacherCode() {
@@ -135,7 +135,7 @@ public class CourseResource {
 
 	@Override
 	public String toString() {
-		return "CourseResource [id=" + id + ", code=" + code + ", type=" + type + ", teacherCode=" + teacherCode + ", lectureSize=" + lectureSize + ", minWorkingDaySize=" + minWorkingDaySize + ", curriculumCodes=" + curriculumCodes + ", studentSize=" + studentSize + ", preferredDays=" + preferredDays + ", preferredTimeslots=" + preferredTimeslots + "]";
+		return "CourseResource [id=" + id + ", code=" + code + ", requiredRoomType=" + requiredRoomType + ", teacherCode=" + teacherCode + ", lectureSize=" + lectureSize + ", minWorkingDaySize=" + minWorkingDaySize + ", curriculumCodes=" + curriculumCodes + ", studentSize=" + studentSize + ", preferredDays=" + preferredDays + ", preferredTimeslots=" + preferredTimeslots + "]";
 	}
 
 }

@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(Include.NON_NULL)
-@ApiObject(name="UnsatisfiedConstraint", description="Unsatisfied constraint.", show = true)
+@ApiObject(name="UnsatisfiedConstraint", description="Unsatisfied constraint.")
 public class UnsatisfiedConstraintResource {
 
 	@JsonProperty("constraintName")

@@ -30,7 +30,7 @@
     "courses" : [
         {
             "code" : "course_01",
-            "type" : "P",
+            "requiredRoomType" : "P",
             "teacherCode" : "teacher_01",
             "lectureSize" : 2,
             "minWorkingDaySize" : 1,
@@ -41,7 +41,7 @@
         },
         {
             "code" : "course_02",
-            "type" : "V",
+            "requiredRoomType" : "V",
             "teacherCode" : "teacher_02",
             "lectureSize" : 4,
             "minWorkingDaySize" : 2,
@@ -52,7 +52,7 @@
         },
         {
             "code" : "course_03",
-            "type" : "P",
+            "requiredRoomType" : "P",
             "teacherCode" : "teacher_03",
             "lectureSize" : 2,
             "minWorkingDaySize" : 1,
@@ -63,7 +63,7 @@
         },
         {
             "code" : "course_04",
-            "type" : "S",
+            "requiredRoomType" : "S",
             "teacherCode" : "teacher_04",
             "lectureSize" : 2,
             "minWorkingDaySize" : 1,

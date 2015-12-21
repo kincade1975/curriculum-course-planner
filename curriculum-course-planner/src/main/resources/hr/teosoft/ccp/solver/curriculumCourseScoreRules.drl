@@ -66,7 +66,7 @@ end
 
 rule "roomType"
   when
-    Lecture(course != null, room != null, room.type != course.type)
+    Lecture(course != null, room != null, room.type != course.requiredRoomType)
   then
     scoreHolder.addHardConstraintMatch(kcontext, -10);
 end
